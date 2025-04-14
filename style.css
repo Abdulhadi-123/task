@@ -1,0 +1,137 @@
+/* ملف style.css */
+/* خلفية الصفحة */
+.hero-section {
+    background-image: url('img/BG.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* ملف style.css */
+/* التنسيقات العامة */
+body {
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* شريط التنقل */
+.nav-container {
+    padding: 20px 0;
+}
+
+.background-bar {
+    background: rgba(36, 36, 36, 0.5);
+    border-radius: 16px;
+    padding: 15px 25px;
+    position: relative;
+}
+
+
+.background-bar::before { top: 0; }
+.background-bar::after { bottom: 0; }
+
+.logo {
+    height: 40px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* الأزرار الرئيسية */
+.btn-main {
+    background: #BB9661 !important;
+    border: 1px solid #374151 !important;
+    color: white !important;
+    padding: 12px 35px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.btn-main:hover {
+    background: #374151 !important;
+    border-color: #BB9661 !important;
+}
+
+.btn-secondary {
+    color: #374151;
+    background-color: rgba(36, 36, 36, 0.5) !important;
+    padding: 12px 35px;
+    border-radius: 8px;
+    border-color: #BB9661 !important;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    padding: 60px 15px;
+}
+
+.h1 {
+    font-size: 2.5rem;
+    color: white;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.highlight {
+    color: #BB9661;
+}
+
+.gradient-bar {
+    background: rgba(36, 36, 36, 0.5);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0 30px auto; /* تغيير هنا للمحاذاة اليمنى */
+    max-width: 750px; /* بدل width ثابت */
+    width: 90%; /* إضافة عرض نسبي */
+}
+
+.gradient-text {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-flex-start; /* تغيير هنا للمحاذاة اليمنى */
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.step-image {
+    /* مثال لتعديل الارتفاع */
+    height: 400px;
+    object-fit: cover;
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .gradient-text {
+        font-size: 1rem;
+        text-align: right;
+    }
+
+    .gradient-bar {
+        margin: 30px auto; /* توسيط على الجوال */
+        width: 100%; /* استخدام العرض الكامل */
+    }
+
+    .button-group {
+        justify-content: center; /* توسيط الأزرار */
+        flex-direction: row; /* ترتيب الأزرار في صف */
+        flex-wrap: wrap; /* السماح باللف إذا لم تتسع الشاشة */
+        gap: 10px; /* تقليل المسافة بين الأزرار */
+    }
+
+    .btn-main, .btn-secondary {
+        width: auto; /* إزالة العرض الكامل */
+        max-width: none; /* إزالة الحد الأقصى للعرض */
+        margin: 0; /* إزالة الهوامش */
+        padding: 10px 20px; /* تعديل الحشوة */
+        font-size: 14px; /* تصغير حجم الخط */
+    }
+}
