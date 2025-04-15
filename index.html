@@ -166,66 +166,112 @@
        </div>
    </section>
 
-   <!-- القسم الجديد -->
-<section class="categories-section py-5">
+   <!-- قسم السلايدر -->
+   <section class="volunteer-slider py-5">
+       <div class="container position-relative">
+           <h2 class="section-title text-center mb-5">المجالات الفرصة التطوعية</h2>
+
+           <!-- أسهم التنقل -->
+           <button class="slider-arrow next-arrow">&lt;</button>
+           <button class="slider-arrow prev-arrow">&gt;</button>
+
+           <!-- حاوية السلايدر -->
+           <div class="slider-container">
+               <div class="slider-track">
+                   <!-- الشرائح (كل شريحة تحتوي على 9 عناصر) -->
+                   <div class="slide active">
+                       <div class="row g-3">
+                           <div class="col-4">
+                               <div class="category-card">التوجيه والإرشاد</div>
+                           </div>
+                           <div class="col-4">
+                               <div class="category-card">سقيا زمزم</div>
+                           </div>
+                           <div class="col-4">
+                               <div class="category-card">العيادة الطبية</div>
+                           </div>
+                           <div class="col-4">
+                               <div class="category-card">تنظيم الحشود</div>
+                           </div>
+                           <div class="col-4">
+                               <div class="category-card">تنظيم الممرات</div>
+                           </div>
+                           <div class="col-4">
+                               <div class="category-card">المعارض</div>
+                           </div>
+                           <div class="col-4">
+                               <div class="category-card">تعليم الكتاب والسنة</div>
+                           </div>
+                           <div class="col-4">
+                               <div class="category-card">رعاية شؤون المسنات</div>
+                           </div>
+                           <div class="col-4">
+                               <div class="category-card">التوعية الصحية</div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- يمكن إضافة شرائح إضافية هنا -->
+               </div>
+           </div>
+
+           <!-- نقط التنقل -->
+           <div class="slider-pagination"></div>
+       </div>
+   </section>
+
+   <script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const sliderTrack = document.querySelector('.slider-track');
+      const paginationContainer = document.querySelector('.slider-pagination');
+      const slides = document.querySelectorAll('.slide');
+      let currentSlide = 0;
+
+      // إنشاء نقاط التنقل
+      slides.forEach((_, index) => {
+          const dot = document.createElement('span');
+          dot.className = 'pagination-dot';
+          if (index === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(index));
+          paginationContainer.appendChild(dot);
+      });
+
+      // الانتقال إلى شريحة محددة
+      function goToSlide(index) {
+          currentSlide = index;
+          const slideWidth = slides[0].offsetWidth;
+          sliderTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
+          // تحديث النقاط النشطة
+          document.querySelectorAll('.pagination-dot').forEach(dot => {
+              dot.classList.remove('active');
+          });
+          paginationContainer.children[currentSlide].classList.add('active');
+      }
+
+      // التمرير التلقائي كل 5 ثواني (اختياري)
+      setInterval(() => {
+          currentSlide = (currentSlide + 1) % slides.length;
+          goToSlide(currentSlide);
+      }, 5000);
+  });
+  </script>
+
+  <!-- قسم الصور الجديد -->
+<section class="app-section py-5">
     <div class="container">
-        <!-- الصف الأول بثلاثة أعمدة -->
-        <div class="row g-4 mb-5">
-            <div class="col-md-4">
-                <div class="row g-3">
-                    <div class="col-12">
-                        <div class="category-card">التوجية والإرشاد</div>
-                    </div>
-                    <div class="col-12">
-                        <div class="category-card">سقيا زمزم</div>
-                    </div>
-                    <div class="col-12">
-                        <div class="category-card">العيادة الطبية</div>
-                    </div>
+        <!-- الصور -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- صورة التطبيق -->
+                <div class="app-image mb-4">
+                    <img src="img/App.png" alt="صورة التطبيق" class="img-fluid rounded shadow">
                 </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="row g-3">
-                    <div class="col-12">
-                        <div class="category-card">تنظيم الحشود</div>
-                    </div>
-                    <div class="col-12">
-                        <div class="category-card">تنظيم الممرات</div>
-                    </div>
-                    <div class="col-12">
-                        <div class="category-card">المعارض</div>
-                    </div>
+                <!-- صورة الجزء -->
+                <div class="part-image">
+                    <img src="img/part.png" alt="صورة الجزء" class="img-fluid rounded shadow">
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="row g-3">
-                    <div class="col-12">
-                        <div class="category-card">تعليم الكتاب والسنة</div>
-                    </div>
-                    <div class="col-12">
-                        <div class="category-card">رعياة شؤون المسنات</div>
-                    </div>
-                    <div class="col-12">
-                        <div class="category-card">التوعية الصحية</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- الصف الثاني مع مسافة بينية -->
-        <div class="row justify-content-between align-items-center mt-5">
-            <div class="col-auto">
-                <nav class="navigation-links">
-                    <a href="#" class="nav-link">عن المنصة</a>
-                    <a href="#" class="nav-link">المشاريع</a>
-                    <a href="#" class="nav-link">الاتصال</a>
-                </nav>
-            </div>
-
-            <div class="col-auto">
-                <h2 class="section-title">المجالات الفرصة التطوعية</h2>
             </div>
         </div>
     </div>
