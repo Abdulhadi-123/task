@@ -1,23 +1,28 @@
 /* ملف style.css */
 /* خلفية الصفحة */
+body {
+    background-color: #1A232D;
+    font-family: 'Tajawal', sans-serif;
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+}
+
 .hero-section {
     background-image: url('img/BG.png');
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
     min-height: 100vh;
     padding: 20px 0;
 }
 
-/* ملف style.css */
-/* التنسيقات العامة */
-body {
-    font-family: 'Tajawal', sans-serif;
-}
-
 /* شريط التنقل */
 .nav-container {
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(26, 35, 45, 0.9);
 }
 
 .background-bar {
@@ -27,16 +32,12 @@ body {
     position: relative;
 }
 
-
-.background-bar::before { top: 0; }
-.background-bar::after { bottom: 0; }
-
 .logo {
     height: 40px;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
-/* الأزرار الرئيسية */
+/* الأزرار */
 .btn-main {
     background: #BB9661 !important;
     border: 1px solid #374151 !important;
@@ -52,11 +53,16 @@ body {
 }
 
 .btn-secondary {
-    color: #374151;
-    background-color: rgba(36, 36, 36, 0.5) !important;
+    border: 2px solid #BB9661 !important;
+    color: #BB9661 !important;
+    background-color: transparent !important;
     padding: 12px 35px;
     border-radius: 8px;
-    border-color: #BB9661 !important;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: rgba(187, 150, 97, 0.1) !important;
 }
 
 /* المحتوى الرئيسي */
@@ -66,7 +72,6 @@ body {
 
 .h1 {
     font-size: 2.5rem;
-    color: white;
     text-align: right;
     margin-bottom: 30px;
 }
@@ -79,59 +84,309 @@ body {
     background: rgba(36, 36, 36, 0.5);
     border-radius: 8px;
     padding: 20px;
-    margin: 30px 0 30px auto; /* تغيير هنا للمحاذاة اليمنى */
-    max-width: 750px; /* بدل width ثابت */
-    width: 90%; /* إضافة عرض نسبي */
+    margin: 30px 0 30px auto;
+    max-width: 750px;
+    width: 90%;
 }
 
 .gradient-text {
-    color: white;
     font-size: 1.1rem;
     line-height: 1.8;
-    margin: 0;
+    text-align: right;
 }
 
 .button-group {
     display: flex;
-    justify-content: flex-flex-start; /* تغيير هنا للمحاذاة اليمنى */
+    justify-content: flex-end;
     gap: 20px;
     margin-top: 40px;
 }
 
-.step-image {
-    /* مثال لتعديل الارتفاع */
-    height: 400px;
-    object-fit: cover;
+/* تنسيقات قسم الرؤية والرسالة */
+.vision-mission {
+    background: linear-gradient(to right, #1A232D, #2A3645);
+    padding: 4rem 0;
+}
+
+.vision-image {
+    border: 3px solid #BB9661;
+    transition: transform 0.3s ease;
+}
+
+.vision-image:hover {
+    transform: scale(1.02);
+}
+
+.title-with-icon {
+    position: relative;
+    padding-right: 2rem;
+    color: #BB9661;
+}
+
+.title-with-icon::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23BB9661"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>');
+}
+
+.vision-card, .mission-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(187, 150, 97, 0.3);
+    backdrop-filter: blur(5px);
+    margin-bottom: 1.5rem;
+}
+
+.vision-text, .mission-text {
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* إضافة تنسيقات قسم المزايا */
+.features-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #BB9661;
+    border-right: 3px solid #BB9661;
+    padding-right: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    background: rgba(36, 36, 36, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 150, 97, 0.2);
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.feature-item h3 {
+    color: #BB9661;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* تنسيقات قسم الفئات المستهدفة */
+.target-section {
+    background: rgba(26, 35, 45, 0.9);
+    padding: 4rem 0;
+}
+
+.target-content {
+    background: rgba(36, 36, 36, 0.3);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 150, 97, 0.2);
+}
+
+.target-list {
+    list-style: none;
+    padding-right: 0;
+}
+
+.target-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(187, 150, 97, 0.2);
+    color: #e0e0e0;
+    position: relative;
+}
+
+.target-list li:last-child {
+    border-bottom: none;
+}
+
+.target-list li::before {
+    content: "•";
+    color: #BB9661;
+    font-size: 1.2rem;
+    position: absolute;
+    right: -1.2rem;
+}
+
+.img-fluid.rounded {
+    border: 2px solid #BB9661;
+    transition: transform 0.3s ease;
+}
+
+.img-fluid.rounded:hover {
+    transform: scale(1.03);
+}
+
+/* التنسيقات الخاصة */
+.categories-section {
+    background: #1A232D;
+    border-top: 3px solid #BB9661;
+}
+
+.category-card {
+    background: rgba(36, 36, 36, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 150, 97, 0.2);
+    color: #e0e0e0;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.category-card:hover {
+    background: #374151;
+    transform: translateY(-3px);
+}
+
+.navigation-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #BB9661 !important;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: #BB9661;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #BB9661;
+    border-right: 3px solid #BB9661;
+    padding-right: 1.5rem;
 }
 
 /* التجاوب مع الشاشات الصغيرة */
 @media (max-width: 768px) {
-    .hero-title {
+    .h1 {
         font-size: 1.8rem;
+        text-align: center;
     }
 
     .gradient-text {
-        font-size: 1rem;
-        text-align: right;
+     font-size: 1rem;
+     text-align: right;
+ }
+
+ .gradient-bar {
+     margin: 30px auto; /* توسيط على الجوال */
+     width: 100%; /* استخدام العرض الكامل */
+ }
+
+ .button-group {
+     justify-content: center; /* توسيط الأزرار */
+     flex-direction: row; /* ترتيب الأزرار في صف */
+     flex-wrap: wrap; /* السماح باللف إذا لم تتسع الشاشة */
+     gap: 10px; /* تقليل المسافة بين الأزرار */
+ }
+
+ .btn-main, .btn-secondary {
+     width: auto; /* إزالة العرض الكامل */
+     max-width: none; /* إزالة الحد الأقصى للعرض */
+     margin: 0; /* إزالة الهوامش */
+     padding: 10px 20px; /* تعديل الحشوة */
+     font-size: 14px; /* تصغير حجم الخط */
+ }
+
+ .vision-mission .row {
+        flex-direction: column-reverse;
     }
 
-    .gradient-bar {
-        margin: 30px auto; /* توسيط على الجوال */
-        width: 100%; /* استخدام العرض الكامل */
+    .vision-image {
+        margin-top: 2rem;
+        max-width: 80%;
     }
 
-    .button-group {
-        justify-content: center; /* توسيط الأزرار */
-        flex-direction: row; /* ترتيب الأزرار في صف */
-        flex-wrap: wrap; /* السماح باللف إذا لم تتسع الشاشة */
-        gap: 10px; /* تقليل المسافة بين الأزرار */
+    .title-with-icon {
+        font-size: 1.5rem;
     }
 
-    .btn-main, .btn-secondary {
-        width: auto; /* إزالة العرض الكامل */
-        max-width: none; /* إزالة الحد الأقصى للعرض */
-        margin: 0; /* إزالة الهوامش */
-        padding: 10px 20px; /* تعديل الحشوة */
-        font-size: 14px; /* تصغير حجم الخط */
+    .vision-card, .mission-card {
+        padding: 1.5rem;
     }
+
+ .section-title {
+        font-size: 1.5rem;
+        border-right: none;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .feature-item {
+        margin-bottom: 1rem;
+    }
+
+    .target-section .col-md-4 {
+        margin-bottom: 2rem;
+    }
+
+    .target-list li::before {
+        right: -1rem;
+    }
+
+    .img-fluid.rounded {
+        max-width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .category-card {
+        padding: 1rem;
+    }
+
+    .navigation-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-title {
+        border-right: none;
+        padding-right: 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .row.justify-content-between {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+.scroll-content {
+    background: linear-gradient(rgba(26, 35, 45, 0.1), rgba(26, 35, 45, 0.3));
 }
