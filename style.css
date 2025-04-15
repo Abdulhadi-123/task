@@ -290,6 +290,127 @@ body {
     padding-right: 1.5rem;
 }
 
+
+/* تنسيقات السلايدر */
+.volunteer-slider {
+    background: #1A232D;
+    padding: 4rem 0;
+    border-top: 3px solid #BB9661;
+}
+
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    padding: 0 50px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.category-card {
+    background: rgba(36, 36, 36, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid #BB9661;
+    text-align: center;
+    color: #e0e0e0;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #BB9661;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.slider-arrow:hover {
+    background: #374151;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+.slider-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.pagination-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #374151;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pagination-dot.active {
+    background: #BB9661;
+    transform: scale(1.3);
+}
+
+.app-section {
+    background: #1A232D;
+    padding: 4rem 0;
+    border-top: 3px solid #BB9661;
+}
+
+.section-title {
+    color: #BB9661;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.app-image img,
+.part-image img {
+    border: 3px solid #BB9661;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.app-image img:hover,
+.part-image img:hover {
+    transform: scale(1.02);
+}
+
+
 /* التجاوب مع الشاشات الصغيرة */
 @media (max-width: 768px) {
     .h1 {
@@ -384,6 +505,34 @@ body {
     .row.justify-content-between {
         flex-direction: column-reverse;
         align-items: flex-start;
+    }
+
+    .slider-track {
+        gap: 10px;
+    }
+
+    .slide {
+        flex: 0 0 calc(100% - 20px);
+    }
+
+    .category-card {
+        height: 200px;
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+    font-size: 1.5rem;
+    }
+
+    .app-image img,
+    .part-image img {
+        border-width: 2px;
+        border-radius: 10px;
     }
 }
 
