@@ -6,6 +6,7 @@ body {
     color: white;
     margin: 0;
     min-height: 100vh;
+    width: 100vw;
 }
 
 .hero-section {
@@ -20,9 +21,11 @@ body {
 .nav-container {
     padding: 20px 0;
     position: sticky;
+    margin: 20px 50px;
     top: 0;
     z-index: 1000;
-    background: rgba(26, 35, 45, 0.9);
+    background: rgba(26, 35, 45, 0.4);
+    border-radius: 50px;
 }
 
 .background-bar {
@@ -384,12 +387,6 @@ body {
     transform: scale(1.3);
 }
 
-.app-section {
-    background: #1A232D;
-    padding: 4rem 0;
-    border-top: 3px solid #BB9661;
-}
-
 .section-title {
     color: #BB9661;
     font-size: 2rem;
@@ -398,18 +395,88 @@ body {
     letter-spacing: 2px;
 }
 
-.app-image img,
-.part-image img {
-    border: 3px solid #BB9661;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
+/* تنسيق القسم الرئيسي */
+.section-with-bar {
+    position: relative;
+    padding: 100px 0; /* زيادة المساحة للارتفاع الجديد */
+    min-height: 600px; /* ارتفاع أدنى للقسم */
+    overflow: hidden;
 }
 
-.app-image img:hover,
-.part-image img:hover {
-    transform: scale(1.02);
+/* الشريط الخلفي بالصورة */
+.section-with-bar::before {
+    content: '';
+    position: absolute;
+    top: 10%; /* يبدأ من 10% ليكون ارتفاعه 80% */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 80%; /* ارتفاع 80% */
+    background-image: url('image.png'); /* مسار صورتك */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.9; /* شفافية الصورة */
 }
 
+/* طبقة تدرج لوني فوق الصورة */
+.section-with-bar::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 70%;
+    background-image: url("img/App-bar.png");
+    background-size: contain;
+    background-position:center;
+}
+
+/* تنسيق النص */
+.content-text {
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px); /* تأثير ضبابي */
+}
+
+.partners-section {
+    background: #1A232D;
+    padding: 4rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 40px;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    scroll-snap-align: center;
+    flex: 0 0 300px;
+    min-height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex; /* جديد */
+    align-items: center; /* جديد */
+    justify-content: center; /* جديد */
+}
+
+.partner-logo {
+    max-width: 80%; /* جديد */
+    max-height: 80%; /* جديد */
+    object-fit: contain;
+    filter: grayscale(100%) brightness(150%);
+    transition: all 0.3s;
+}
 
 /* التجاوب مع الشاشات الصغيرة */
 @media (max-width: 768px) {
@@ -529,13 +596,96 @@ body {
     font-size: 1.5rem;
     }
 
-    .app-image img,
-    .part-image img {
-        border-width: 2px;
-        border-radius: 10px;
-    }
 }
 
 .scroll-content {
     background: linear-gradient(rgba(26, 35, 45, 0.1), rgba(26, 35, 45, 0.3));
 }
+
+
+.custom-card {
+    width: 628px;
+    padding: 40px 40px 80px 40px;
+    background:
+      linear-gradient(90deg, rgba(166, 142, 97, 0.30) 0%, rgba(64, 54.75, 37.40, 0) 100%),
+      linear-gradient(0deg, rgba(166, 142, 97, 0.05) 0%),
+      #1A232D;
+    border-radius: 24px;
+    outline: 1px solid rgba(255, 255, 255, 0.09);
+    outline-offset: -1px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+  }
+
+  .custom-title {
+    height: 71px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 600;
+    line-height: 38px;
+  }
+
+  .custom-text {
+    text-align: justify;
+    color: white;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+
+  .custom-card.large {
+    width: 100%;
+  }
+
+  .custom-card.small {
+    width: 90%; /* 20% less than 628px */
+    margin-top: -50px;
+  }
+  .custom-section {
+          padding: 2rem 0; /* Reduce padding on mobile */
+      }
+
+      .content-text {
+          padding-right: 0; /* Remove right padding on mobile */
+          margin-bottom: 2rem; /* Space between columns */
+      }
+
+      .main-image {
+          margin-top: 1.5rem; /* Space between image columns */
+      }
+      .section-with-bar {
+        padding: 50px 0;
+        min-height: 400px;
+    }
+
+    .section-with-bar::before,
+    .section-with-bar::after {
+        height: 85%; /* تعديل الارتفاع للجوال */
+        top: 7%;
+    }
+
+    .partners-carousel {
+        padding: 0 20px;
+    }
+
+    .carousel-item {
+        flex: 0 0 250px;
+    }
+  @media (max-width: 767.98px) {
+    .custom-card.small {
+      margin-top: 0 !important;
+      width: 100% !important;
+    }
+
+    .custom-card.large {
+      width: 100% !important;
+    }
+  }
