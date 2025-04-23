@@ -37,7 +37,7 @@ body {
 
 .logo {
     height: 40px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* الأزرار */
@@ -48,6 +48,7 @@ body {
     padding: 12px 35px;
     border-radius: 8px;
     transition: all 0.3s;
+
 }
 
 .btn-main:hover {
@@ -137,7 +138,8 @@ body {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23BB9661"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>');
 }
 
-.vision-card, .mission-card {
+.vision-card,
+.mission-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem;
     border-radius: 10px;
@@ -146,7 +148,8 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.vision-text, .mission-text {
+.vision-text,
+.mission-text {
     color: #e0e0e0;
     line-height: 1.8;
     font-size: 1.1rem;
@@ -177,7 +180,7 @@ body {
 
 .feature-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .feature-item h3 {
@@ -340,55 +343,32 @@ body {
 /* تنسيق القسم الرئيسي */
 .section-with-bar {
     position: relative;
-    padding: 100px 0; /* زيادة المساحة للارتفاع الجديد */
-    min-height: 600px; /* ارتفاع أدنى للقسم */
-    overflow: hidden;
+    /* padding: 100px 0; */
+    /* زيادة المساحة للارتفاع الجديد */
+    min-height: 600px;
+    /* ارتفاع أدنى للقسم */
+    /* overflow: hidden; */
 }
 
-/* الشريط الخلفي بالصورة */
-.section-with-bar::before {
-    content: '';
-    position: absolute;
-    top: 10%; /* يبدأ من 10% ليكون ارتفاعه 80% */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80vw;
-    height: 80%; /* ارتفاع 80% */
-    background-image: url('img/App-bar.png'); /* مسار صورتك */
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    opacity: 0.9; /* شفافية الصورة */
-}
-
-/* طبقة تدرج لوني فوق الصورة */
-.section-with-bar::after {
-    content: '';
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60vw;
-    height: 70%;
-    background-image: url("img/App-bar.png");
-    background-size: contain;
-    background-position:center;
-}
 
 /* تنسيق النص */
 .content-text {
     padding: 30px;
     border-radius: 10px;
-    backdrop-filter: blur(3px); /* تأثير ضبابي */
+    backdrop-filter: blur(3px);
+    /* تأثير ضبابي */
 }
 
 .partner-logo {
-    max-width: 80%; /* جديد */
-    max-height: 80%; /* جديد */
+    max-width: 80%;
+    /* جديد */
+    max-height: 80%;
+    /* جديد */
     object-fit: contain;
     filter: grayscale(100%) brightness(150%);
     transition: all 0.3s;
 }
+
 /* تنسيقات مخصصة للسلايدر */
 #categoriesCarousel .carousel-indicators button {
     width: 12px;
@@ -421,6 +401,10 @@ body {
     background-image: url('img/content.png');
     color: #fff;
     padding: 3rem 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: visible;
+    min-height: 500px;
 }
 
 .widget-title {
@@ -507,31 +491,43 @@ body {
     }
 
     .gradient-text {
-     font-size: 1rem;
-     text-align: right;
- }
+        font-size: 1rem;
+        text-align: right;
+    }
 
- .gradient-bar {
-     margin: 30px auto; /* توسيط على الجوال */
-     width: 100%; /* استخدام العرض الكامل */
- }
+    .gradient-bar {
+        margin: 30px auto;
+        /* توسيط على الجوال */
+        width: 100%;
+        /* استخدام العرض الكامل */
+    }
 
- .button-group {
-     justify-content: center; /* توسيط الأزرار */
-     flex-direction: row; /* ترتيب الأزرار في صف */
-     flex-wrap: wrap; /* السماح باللف إذا لم تتسع الشاشة */
-     gap: 10px; /* تقليل المسافة بين الأزرار */
- }
+    .button-group {
+        justify-content: center;
+        /* توسيط الأزرار */
+        flex-direction: row;
+        /* ترتيب الأزرار في صف */
+        flex-wrap: wrap;
+        /* السماح باللف إذا لم تتسع الشاشة */
+        gap: 10px;
+        /* تقليل المسافة بين الأزرار */
+    }
 
- .btn-main, .btn-secondary {
-     width: auto; /* إزالة العرض الكامل */
-     max-width: none; /* إزالة الحد الأقصى للعرض */
-     margin: 0; /* إزالة الهوامش */
-     padding: 10px 20px; /* تعديل الحشوة */
-     font-size: 14px; /* تصغير حجم الخط */
- }
+    .btn-main,
+    .btn-secondary {
+        width: auto;
+        /* إزالة العرض الكامل */
+        max-width: none;
+        /* إزالة الحد الأقصى للعرض */
+        margin: 0;
+        /* إزالة الهوامش */
+        padding: 10px 20px;
+        /* تعديل الحشوة */
+        font-size: 14px;
+        /* تصغير حجم الخط */
+    }
 
- .vision-mission .row {
+    .vision-mission .row {
         flex-direction: column-reverse;
     }
 
@@ -544,11 +540,12 @@ body {
         font-size: 1.5rem;
     }
 
-    .vision-card, .mission-card {
+    .vision-card,
+    .mission-card {
         padding: 1.5rem;
     }
 
- .section-title {
+    .section-title {
         font-size: 1.5rem;
         border-right: none;
         padding-right: 0;
@@ -606,7 +603,7 @@ body {
     }
 
     .section-title {
-    font-size: 1.5rem;
+        font-size: 1.5rem;
     }
 
 }
@@ -620,9 +617,9 @@ body {
     width: 628px;
     padding: 40px 40px 80px 40px;
     background:
-      linear-gradient(90deg, rgba(166, 142, 97, 0.30) 0%, rgba(64, 54.75, 37.40, 0) 100%),
-      linear-gradient(0deg, rgba(166, 142, 97, 0.05) 0%),
-      #1A232D;
+        linear-gradient(90deg, rgba(166, 142, 97, 0.30) 0%, rgba(64, 54.75, 37.40, 0) 100%),
+        linear-gradient(0deg, rgba(166, 142, 97, 0.05) 0%),
+        #1A232D;
     border-radius: 24px;
     outline: 1px solid rgba(255, 255, 255, 0.09);
     outline-offset: -1px;
@@ -630,9 +627,9 @@ body {
     flex-direction: column;
     gap: 8px;
     overflow: hidden;
-  }
+}
 
-  .custom-title {
+.custom-title {
     height: 71px;
     text-align: right;
     display: flex;
@@ -642,69 +639,67 @@ body {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-weight: 600;
     line-height: 38px;
-  }
+}
 
-  .custom-text {
+.custom-text {
     text-align: justify;
     color: white;
     font-size: 20px;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-weight: 500;
     line-height: 30px;
-  }
+}
 
 
-  .custom-card.large {
+.custom-card.large {
     width: 100%;
-  }
+}
 
-  .custom-card.small {
-    width: 90%; /* 20% less than 628px */
+.custom-card.small {
+    width: 90%;
+    /* 20% less than 628px */
     margin-top: -50px;
-  }
-  .custom-section {
-          padding: 2rem 0; /* Reduce padding on mobile */
-      }
+}
 
-      .content-text {
-          padding-right: 0; /* Remove right padding on mobile */
-          margin-bottom: 2rem; /* Space between columns */
-      }
+.custom-section {
+    padding: 2rem 0;
+    /* Reduce padding on mobile */
+}
 
-      .main-image {
-          margin-top: 1.5rem; /* Space between image columns */
-      }
-      .section-with-bar {
-        padding: 50px 0;
-        min-height: 400px;
-    }
+.content-text {
+    padding-right: 0;
+    /* Remove right padding on mobile */
+    margin-bottom: 2rem;
+    /* Space between columns */
+}
 
-    .section-with-bar::before,
-    .section-with-bar::after {
-        height: 85%; /* تعديل الارتفاع للجوال */
-        top: 7%;
-    }
+.main-image {
+    margin-top: 1.5rem;
+    /* Space between image columns */
+}
 
-    .widget-title {
-            font-size: 1rem;
-        }
 
-        .widget-text {
-            font-size: 0.8rem;
-        }
 
-        .btn-access {
-            padding: 0.1rem 0.6rem;
-        }
+.widget-title {
+    font-size: 1rem;
+}
 
-  @media (max-width: 767.98px) {
+.widget-text {
+    font-size: 0.8rem;
+}
+
+.btn-access {
+    padding: 0.1rem 0.6rem;
+}
+
+@media (max-width: 768px) {
     .custom-card.small {
-      margin-top: 0 !important;
-      width: 100% !important;
+        margin-top: 0 !important;
+        width: 100% !important;
     }
 
     .custom-card.large {
-      width: 100% !important;
+        width: 100% !important;
     }
 
-  }
+}
