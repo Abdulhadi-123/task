@@ -11,22 +11,22 @@
     <!-- القسم الرئيسي -->
     <section class="hero-section">
         <!-- شريط التنقل -->
-            <div class="container">
-                <div class="background-bar">
-                    <div class="row justify-content-between align-items-center">
-                        <!-- اللوقو -->
-                        <div class="col-auto">
-                            <img src="img/logo.png" alt="لوقو المنصة" class="logo">
-                        </div>
-                        <!-- زر التجربة -->
-                        <div class="col-auto">
-                            <button class="btn btn-main">تجربة مجانية</button>
-                        </div>
-                    </div>
-                </div>
+        <div class="container">
+    <div class="background-bar">
+        <div class="row flex-nowrap justify-content-between align-items-center gx-0">
+            <!-- اللوقو -->
+            <div class="col-auto order-2 order-md-1 d-flex align-items-center">
+                <img src="img/logo.png" alt="لوقو المنصة" class="logo">
             </div>
 
-        <!-- محتوى الصفحة -->
+            <!-- زر التجربة -->
+            <div class="col-auto order-1 order-md-2 d-flex align-items-center">
+                <button class="btn btn-main">تجربة مجانية</button>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- محتوى الصفحة -->
         <div class="container main-content d-flex flex-column justify-content-center " style="min-height: 100vh;">
             <!-- العنوان -->
             <h1 class="h1">أهلًا بـك</h1>
@@ -254,7 +254,7 @@
              </div>
 
              <!-- الشريحة الثالثة-->
-             <<div class="carousel-item">
+             <div class="carousel-item">
                     <div class="container">
                         <div class="row g-3">
                          <div class="col-4">
@@ -297,12 +297,12 @@
 
   <section class="section-with-bar">
     <div class="container">
-        <div class="row" style="background-image: url('img/download-app.png'); background-repeat: no-repeat; background-size: cover; overflow: visible; min-height: 500px;">
+        <div class="row" style="background-image: url('img/App-bar.png'); background-repeat: no-repeat; background-size: cover; overflow: visible; min-height: 500px;">
             <!-- العمود الأول -->
             <div class="col-md-6 d-flex flex-column align-items-start justify-content-center">
                 <!-- Content Text -->
                 <div class="content-text mb-4">
-                    <h5 class="display-7">شرف الخدمة. وأجر الضيافة! كن عوناً لضيوف الرحمن،</h2>
+                  <h5 class="display-7">شرف الخدمة. وأجر الضيافة! كن عوناً لضيوف الرحمن،</h2>
                     <p class="lead fs-5">
 
                         حقل تطبيق تطوع الحرمين وإبدأ رحلتك في الخير
@@ -330,7 +330,7 @@
             <div class="col-md-6">
                 <div class="container" style="overflow: visible;">
                     <div class="img-container h-100">
-                        <img src="img/phones.png" class="img-fluid rounded-3 shadow-lg" style="background-color: transparent !important; box-shadow: none !important;">
+                        <img src="img/phone.png" class="img-fluid rounded-3 shadow-lg" style="background-color: transparent !important; box-shadow: none !important;">
                     </div>
                 </div>
             </div>
@@ -340,7 +340,7 @@
 
 <section id="partners" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4">شركاء النجاح</h2>
+        <h2 class="text-center mb-4" data-bs-ride="carousel" data-bs-interval="3000">شركاء النجاح</h2>
         <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
