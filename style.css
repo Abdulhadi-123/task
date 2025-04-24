@@ -59,11 +59,25 @@ img {
     flex-shrink: 0;
 }
 
+
 .btn-main:hover {
     background: #374151 !important;
     border-color: #BB9661 !important;
 }
-
+.btn-test {
+    background: #BB9661 !important;
+    border: 1px solid #374151 !important;
+    color: white !important;
+    padding: 12px 35px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.btn-tes:hover {
+    background: #374151 !important;
+    border-color: #BB9661 !important;
+}
 .btn-secondary {
     border: 2px solid #BB9661 !important;
     color: #BB9661 !important;
@@ -77,6 +91,9 @@ img {
     background: rgba(187, 150, 97, 0.1) !important;
 }
 
+.mobile-logo {
+  display: none;
+}
 /* المحتوى الرئيسي */
 .main-content {
     padding: 60px 15px;
@@ -525,6 +542,7 @@ img {
 
     .background-bar {
         padding: 10px 15px !important;
+        display: none;
     }
 
     .row.flex-nowrap {
@@ -539,6 +557,13 @@ img {
         height: 35px;
         max-width: 100px;
         flex-shrink: 1; /* السماح بتصغيره عند الحاجة */
+        display: none;
+    }
+
+    .btn-test {
+        padding: 8px 15px;
+        font-size: 14px;
+        white-space: nowrap;
     }
 
     .btn-main {
@@ -743,4 +768,20 @@ img {
         font-size: 14px;
         padding: 8px 16px;
     }
+    .btn-test {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+@media (max-width: 768px) {
+  .mobile-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .mobile-logo img {
+  max-width: 120px;
+  height: auto;
+}
 }
