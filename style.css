@@ -7,8 +7,13 @@ body {
     margin: 0;
     min-height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 .hero-section {
     background-image: url('img/BG.png');
     background-size: cover;
@@ -38,6 +43,8 @@ body {
 .logo {
     height: 40px;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    max-width: 120px;
+    flex-shrink: 0;
 }
 
 /* الأزرار */
@@ -48,7 +55,8 @@ body {
     padding: 12px 35px;
     border-radius: 8px;
     transition: all 0.3s;
-
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .btn-main:hover {
@@ -254,6 +262,7 @@ body {
     color: #e0e0e0;
     transition: all 0.3s;
     text-align: center;
+    min-height: 120px;
 }
 
 .category-card:hover {
@@ -308,6 +317,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
+    min-height: 120px;
 }
 
 .prev-arrow {
@@ -513,18 +523,28 @@ body {
         /* تقليل المسافة بين الأزرار */
     }
 
-    .btn-main,
-    .btn-secondary {
-        width: auto;
-        /* إزالة العرض الكامل */
-        max-width: none;
-        /* إزالة الحد الأقصى للعرض */
-        margin: 0;
-        /* إزالة الهوامش */
-        padding: 10px 20px;
-        /* تعديل الحشوة */
+    .background-bar {
+        padding: 10px 15px !important;
+    }
+
+    .row.flex-nowrap {
+        gap: 8px; /* تقليل المسافة بين العناصر */
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        margin-left: -5px; /* تعويض الهوامش الداخلية */
+        margin-right: -5px;
+    }
+
+    .logo {
+        height: 35px;
+        max-width: 100px;
+        flex-shrink: 1; /* السماح بتصغيره عند الحاجة */
+    }
+
+    .btn-main {
+        padding: 8px 15px;
         font-size: 14px;
-        /* تصغير حجم الخط */
+        white-space: nowrap;
     }
 
     .vision-mission .row {
@@ -570,10 +590,6 @@ body {
         display: block;
     }
 
-    .category-card {
-        padding: 1rem;
-    }
-
     .navigation-links {
         flex-direction: column;
         gap: 1rem;
@@ -594,8 +610,13 @@ body {
 
     .category-card {
         height: 200px;
-        padding: 1.5rem;
-        font-size: 1rem;
+        padding: 1rem;
+        font-size: 14px;
+    }
+
+    .row.g-3 {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .section-title {
@@ -702,4 +723,24 @@ body {
         width: 100% !important;
     }
 
+}
+@media (max-width: 768px) {
+    .background-bar .row {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .background-bar .col-auto {
+        flex: 0 1 auto !important;
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+
+    .btn-main {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
